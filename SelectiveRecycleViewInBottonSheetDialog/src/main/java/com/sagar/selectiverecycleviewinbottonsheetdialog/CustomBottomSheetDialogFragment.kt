@@ -30,6 +30,7 @@ class CustomBottomSheetDialogFragment(
     private val isMultiSelectAllowed: Boolean = false,
     private val showSearch: Boolean = false,
     private val searchHint: String? = null,
+    private val showCountText: Boolean = false,
     private val showDragHandle: Boolean = true,
 ) : BottomSheetDialogFragment(), OnFilterResultListener {
 
@@ -82,6 +83,8 @@ class CustomBottomSheetDialogFragment(
             searchView.isVisible = showSearch && selectionList.isNotEmpty()
             dragHandle.isVisible = showDragHandle
             etSearch.hint = searchHint ?: "Search here"
+            txtCount.isVisible = showCountText
+            if (txtCount.isVisible) txtCount.text = selectionList.size.toString()
 
             recyclerView.apply {
                 layoutManager = LinearLayoutManager(activity)

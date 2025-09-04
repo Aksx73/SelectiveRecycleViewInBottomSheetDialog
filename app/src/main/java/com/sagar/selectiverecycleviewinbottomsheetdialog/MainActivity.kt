@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), CustomBottomSheetDialogInterface {
                 "Select Role",
                 roleList,
                 false,
-                showSearch = true,
+                showSearch = false,
                 searchHint = "Search Role",
                 showDragHandle = false
             ) {
@@ -90,7 +90,8 @@ class MainActivity : AppCompatActivity(), CustomBottomSheetDialogInterface {
                 CustomBottomSheetDialogLambdaFragment(
                     "Select Cities", cityList,
                     isMultiSelectAllowed = true,
-                    showSearch = true
+                    showSearch = true,
+                    showCountText = true
                 ) {
                     selectedCities = ""
                     for (obj in cityList) {
